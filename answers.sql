@@ -55,20 +55,3 @@ INSERT INTO Product (OrderID, Product, Quantity) VALUES
 (102, 'Keyboard', 1),
 (102, 'Mouse', 2),
 (103, 'Phone', 1);
-
---View the individual Orders and OrderItems tables.
-SELECT * FROM Orders;
-SELECT * FROM OrderItems;
-
--- Joining Orders and OrderItems tables based on the OrderID.  Each product appears with the correct customer.
-SELECT 
-    o.OrderID,
-    o.CustomerName,
-    oi.Product,
-    oi.Quantity
-FROM 
-    Orders AS o
-INNER JOIN 
-    OrderItems AS oi ON o.OrderID = oi.OrderID
-ORDER BY 
-    o.OrderID;
